@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://c2xq836h1ib3e"]
+
+[ext_resource type="Texture2D" uid="uid://dgtwe5bmauj1x" path="res://Asset/Player/pixil-frame-0.png" id="1_d6wu7"]
+[ext_resource type="Texture2D" uid="uid://1u22pywg6pbq" path="res://Asset/Player/pixil-frame-1.png" id="2_2v4yq"]
+[ext_resource type="Texture2D" uid="uid://bii38np07oph1" path="res://Asset/Player/pixil-frame-2.png" id="3_n6j4c"]
+[ext_resource type="Texture2D" uid="uid://bw85xenlm0tw5" path="res://Asset/Player/pixil-frame-3.png" id="4_3piij"]
+[ext_resource type="Texture2D" uid="uid://b6tgy7ivqedp6" path="res://Asset/Player/pixil-frame-4.png" id="5_6m153"]
+[ext_resource type="Texture2D" uid="uid://b1ayqhep1df5e" path="res://Asset/Player/pixil-frame-5.png" id="6_63pby"]
+[ext_resource type="Texture2D" uid="uid://dll0vo3v3skmu" path="res://Asset/Player/pixil-frame-6.png" id="7_a1p5o"]
+[ext_resource type="Texture2D" uid="uid://djwogfgw1mtat" path="res://Asset/Player/pixil-frame-7.png" id="8_udoi1"]
+[ext_resource type="Texture2D" uid="uid://bxeitm8cmyoxt" path="res://Asset/Player/pixil-frame-8.png" id="9_i5uvp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bf31c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d6wu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2v4yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n6j4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3piij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6m153")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_63pby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a1p5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_udoi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_i5uvp")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3dk6o"]
+radius = 124.0
+
+[node name="Player" type="CharacterBody2D"]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bf31c")
+animation = &"Walking"
+frame_progress = 0.493381
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, -7)
+shape = SubResource("CircleShape2D_3dk6o")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2xq836h1ib3e"]
+[gd_scene load_steps=13 format=3 uid="uid://c2xq836h1ib3e"]
 
 [ext_resource type="Texture2D" uid="uid://dgtwe5bmauj1x" path="res://Asset/Player/pixil-frame-0.png" id="1_d6wu7"]
+[ext_resource type="Script" path="res://Scene/player.gd" id="1_j63qr"]
 [ext_resource type="Texture2D" uid="uid://1u22pywg6pbq" path="res://Asset/Player/pixil-frame-1.png" id="2_2v4yq"]
 [ext_resource type="Texture2D" uid="uid://bii38np07oph1" path="res://Asset/Player/pixil-frame-2.png" id="3_n6j4c"]
 [ext_resource type="Texture2D" uid="uid://bw85xenlm0tw5" path="res://Asset/Player/pixil-frame-3.png" id="4_3piij"]
@@ -54,6 +55,9 @@ animations = [{
 radius = 124.0
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(442, 254)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_j63qr")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

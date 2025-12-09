@@ -15,11 +15,20 @@ func _process(delta: float) -> void:
 				rotation = -PI/2
 			else:
 				rotation = PI/2
-		else:
-			if velocity.y > 0:
+		elif velocity.y > 0:
+			if velocity.x == 0:
 				rotation = 0
+			elif velocity.x > 0:
+				rotation = -PI/4
 			else:
+				rotation = PI/4
+		else:
+			if velocity.x == 0:
 				rotation = PI
+			elif velocity.x > 0:
+				rotation = -3*PI/4
+			else:
+				rotation = 3*PI/4
 		
 		
 		

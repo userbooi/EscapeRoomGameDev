@@ -1,13 +1,80 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7qvvgx2lk3w4"]
+[gd_scene load_steps=7 format=3 uid="uid://c7qvvgx2lk3w4"]
 
 [ext_resource type="PackedScene" uid="uid://dcpi0eoxqxge0" path="res://Scene/map.tscn" id="1_15bek"]
 [ext_resource type="PackedScene" uid="uid://c2xq836h1ib3e" path="res://Scene/player.tscn" id="1_xgf5u"]
+[ext_resource type="PackedScene" uid="uid://cop56pr7shfie" path="res://Scene/six_seven.tscn" id="3_dmpai"]
+[ext_resource type="PackedScene" uid="uid://v33uc4k4igl5" path="res://Scene/bed.tscn" id="4_ynsm4"]
+[ext_resource type="PackedScene" uid="uid://c1rcbmafc2np2" path="res://Scene/plant.tscn" id="5_bk34m"]
+[ext_resource type="PackedScene" uid="uid://ctg15lpmlld2m" path="res://Scene/table.tscn" id="6_bb475"]
 
 [node name="Main" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2302.0
+offset_top = -1878.0
+offset_right = 2676.0
+offset_bottom = 1867.0
+color = Color(0, 0, 0, 1)
 
 [node name="Map" parent="." instance=ExtResource("1_15bek")]
 
 [node name="Player" parent="." instance=ExtResource("1_xgf5u")]
+position = Vector2(15, 1129)
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1788, 1107)
+
+[node name="interactables" type="Node2D" parent="."]
+
+[node name="six seven" parent="interactables" instance=ExtResource("3_dmpai")]
+position = Vector2(1674, 1370)
+
+[node name="six seven2" parent="interactables" instance=ExtResource("3_dmpai")]
+position = Vector2(1085, -1265)
+rotation = 1.5708
+
+[node name="six seven3" parent="interactables" instance=ExtResource("3_dmpai")]
+position = Vector2(328, -143)
+
+[node name="six seven4" parent="interactables" instance=ExtResource("3_dmpai")]
+position = Vector2(-303, 139)
+
+[node name="Bed" parent="interactables" instance=ExtResource("4_ynsm4")]
+position = Vector2(-1617, -137)
+
+[node name="Bed2" parent="interactables" instance=ExtResource("4_ynsm4")]
+position = Vector2(-1355, -141)
+
+[node name="plant" parent="interactables" instance=ExtResource("5_bk34m")]
+position = Vector2(-631, 1044)
+
+[node name="plant2" parent="interactables" instance=ExtResource("5_bk34m")]
+position = Vector2(-617, -269)
+
+[node name="plant3" parent="interactables" instance=ExtResource("5_bk34m")]
+position = Vector2(-1063, 1061)
+
+[node name="six seven5" parent="interactables" instance=ExtResource("3_dmpai")]
+position = Vector2(-1519, -32)
+
+[node name="table" parent="interactables" instance=ExtResource("6_bb475")]
+position = Vector2(-207, -473)
+
+[node name="plant4" parent="interactables" instance=ExtResource("5_bk34m")]
+position = Vector2(-629, -476)
+
+[node name="plant5" parent="interactables" instance=ExtResource("5_bk34m")]
+position = Vector2(-1454, -657)
+
+[node name="table2" parent="interactables" instance=ExtResource("6_bb475")]
+position = Vector2(794, 707)
+rotation = 1.5708
+
+[node name="table3" parent="interactables" instance=ExtResource("6_bb475")]
+position = Vector2(588, 1273)
+
+[node name="plant6" parent="interactables" instance=ExtResource("5_bk34m")]
+position = Vector2(984, 597)
+
+[node name="plant7" parent="interactables" instance=ExtResource("5_bk34m")]
+position = Vector2(991, 1273)

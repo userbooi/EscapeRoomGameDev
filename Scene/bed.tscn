@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=4 uid="uid://v33uc4k4igl5"]
+
+[ext_resource type="TileSet" uid="uid://blmn3kbuy051" path="res://Asset/furniture.tres" id="1_mfw0b"]
+
+[node name="Bed" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAP//AAABAAAAAAAAAAAAAAABAAEAAAAAAAEAAAABAAIAAAAAAAIAAAABAAMAAAABAP//AAACAAAAAAABAAAAAAACAAEAAAABAAEAAAACAAIAAAABAAIAAAACAAMAAAA=")
+tile_set = ExtResource("1_mfw0b")

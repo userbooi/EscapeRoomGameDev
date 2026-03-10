@@ -4,6 +4,10 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+func _ready() -> void:
+	$ColorRect.visible = false
+	$prompt.visible = false
+
 func _process(delta: float) -> void:
 	if velocity == Vector2.ZERO:
 		$AnimatedSprite2D.stop()
@@ -51,3 +55,13 @@ func _physics_process(delta: float) -> void:
 		
 	velocity = velocity.normalized() * SPEED
 	move_and_slide()
+
+func _on_interact_area_body_entered(body: Node2D) -> void:
+	#print(body.get_parent().name)
+	$ColorRect.visible = true
+	$prompt.visible = true
+
+func _on_interact_area_body_exited(body: Node2D) -> void:
+	#print(len($interactArea.get_overlapping_bodies()))
+	$ColorRect.visible = false
+	$prompt.visible = false

@@ -89,12 +89,6 @@ rotation_smoothing_speed = 2.0
 shape = SubResource("CircleShape2D_6v8ex")
 debug_color = Color(0.971531, 0, 0.447315, 0.42)
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -86.0
-offset_top = 190.0
-offset_right = 86.0
-offset_bottom = 358.0
-
 [connection signal="area_entered" from="interactArea" to="." method="_on_interact_area_area_entered"]
 [connection signal="body_entered" from="interactArea" to="." method="_on_interact_area_body_entered"]
 [connection signal="body_exited" from="interactArea" to="." method="_on_interact_area_body_exited"]

@@ -55,7 +55,7 @@ animations = [{
 radius = 124.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6v8ex"]
-radius = 280.007
+radius = 110.164
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(442, 254)
@@ -84,6 +84,8 @@ position_smoothing_speed = 2.0
 rotation_smoothing_speed = 2.0
 
 [node name="interactArea" type="Area2D" parent="."]
+position = Vector2(-2, 116)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interactArea"]
 shape = SubResource("CircleShape2D_6v8ex")

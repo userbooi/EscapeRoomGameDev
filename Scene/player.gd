@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
+var key_item_number = 0
+var key_items = ["six seven2", "plant6", "table3", "Bed1"]
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
+var movable=true
 
 func _ready() -> void:
 	pass
@@ -40,24 +43,37 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var directionx := Input.get_axis("left", "right")
-	var directiony := Input.get_axis("up", "down") 
-	
-	if directionx:
-		velocity.x = directionx
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	if movable:
+		var directionx := Input.get_axis("left", "right")
+		var directiony := Input.get_axis("up", "down") 
 		
-	if directiony:
-		velocity.y = directiony
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-		
-	velocity = velocity.normalized() * SPEED
-	move_and_slide()
+		if directionx:
+			velocity.x = directionx
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			
+		if directiony:
+			velocity.y = directiony
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
+			
+		velocity = velocity.normalized() * SPEED
+		move_and_slide()
 
 func interact():
 	for body in $interactArea.get_overlapping_bodies():
 		if body.name != "Player" and body.name != "Wall":
-			print(body.get_parent().name)
+			
+			
+			if key_item_number == 0:
+				if body.name == key_items[key_item_number]:
+					key_item_number += 1
+			else:
+				if body.get_parent().name == key_items[key_item_number]:
+					key_item_number += 1
+					
+		
+			get_parent().get_node("Dialogue").set_text(body.name, body.get_parent().name)
+			get_parent().get_node("Dialogue").visible=true
+			movable=false
 			break

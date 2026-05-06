@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7qvvgx2lk3w4"]
+[gd_scene load_steps=10 format=3 uid="uid://c7qvvgx2lk3w4"]
 
 [ext_resource type="PackedScene" uid="uid://dcpi0eoxqxge0" path="res://Scene/map.tscn" id="1_15bek"]
 [ext_resource type="Script" path="res://Scene/main.gd" id="1_qrutc"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://ctg15lpmlld2m" path="res://Scene/table.tscn" id="6_bb475"]
 [ext_resource type="Script" path="res://Scene/control.gd" id="7_x64cx"]
 [ext_resource type="PackedScene" uid="uid://bwl3ac675v6rn" path="res://Scene/dialogue.tscn" id="9_oujed"]
-[ext_resource type="Script" path="res://Scene/dialogue.gd" id="10_3m3ie"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_qrutc")
@@ -113,9 +112,8 @@ theme_override_font_sizes/font_size = 125
 text = "E"
 
 [node name="Dialogue" parent="." instance=ExtResource("9_oujed")]
-offset_left = -1143.0
-offset_top = 467.0
-offset_right = -1143.0
-offset_bottom = 467.0
+offset_left = -1140.0
+offset_top = 479.0
+offset_right = -1140.0
+offset_bottom = 479.0
 scale = Vector2(2, 2)
-script = ExtResource("10_3m3ie")

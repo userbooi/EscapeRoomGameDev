@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5frumcuiqniw"]
+
+[sub_resource type="Animation" id="Animation_r57do"]
+resource_name = "end_screen"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_58nof"]
+_data = {
+"end_screen": SubResource("Animation_r57do")
+}
+
+[node name="Endscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -2066.0
+offset_top = 574.0
+offset_right = -1601.0
+offset_bottom = 726.0
+rotation = 5.75959
+scale = Vector2(10, 10)
+theme_override_font_sizes/font_size = 100
+text = "YOU WIN"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_58nof")
+}

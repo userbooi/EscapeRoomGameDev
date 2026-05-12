@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 var key_item_number = 0
-var key_items = ["six seven2", "plant6", "table3", "Bed1"]
+var key_items = ["six seven2", "plant6", "table3", "Bed"]
+var found = false
 
 const SPEED = 400.0
 const JUMP_VELOCITY = -400.0
@@ -68,12 +69,14 @@ func interact():
 			if key_item_number == 0:
 				if body.name == key_items[key_item_number]:
 					key_item_number += 1
+					found = true
 			else:
 				if body.get_parent().name == key_items[key_item_number]:
 					key_item_number += 1
+					found = true
 					
 		
-			get_parent().get_node("Dialogue").set_text(body.name, body.get_parent().name)
+			get_parent().get_node("Dialogue").set_text(body.name, body.get_parent().name, found, key_item_number)
 			get_parent().get_node("Dialogue").visible=true
 			movable=false
 			break
